@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+
+	<title>Lesson 16 Homework. About - form</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="wrapper__container">
+			<!-- ================HEADER======================= -->
+			<header class="header">
+				<!-- Flex  контейнер -->
+				<div class="header__container">
+					<!-- Flex  елемент  -->
+					<a href="" class="header__logo">
+						<img src="img/logo.svg" alt="logo">
+					</a>
+					<!-- flex елемент -->
+					<nav class="header__menu menu">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="" class="menu__link">About Us</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Courses</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Events</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Blog</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Contacts</a></li>
+						</ul>
+					</nav>
+					<div class="header__actions actions-header">
+						<a href="" class="actions-header__button button">
+							<span>Get consultation</span>
+						</a>
+						<a href="" class="actions-header__auth"><span> Log in / Register</span></a>
+					</div>
+				</div>
+			</header>
+
+			<!-- Виявлення БЕМ блоків -->
+			<main class="page">
+				<!-- SECTION PAGE-BLOCK -->
+				<section class="page__main main-block">
+					<div class="main-block__container">
+						<div class="main-block__body body-main">
+							<div class="body-main__media">
+								<img src="img/illustration.png" alt="illustration">
+							</div>
+							<div class="body-main__content">
+								<div class="body-main__title title">
+									<div class="title__subtitle">Any questions?</div>
+									<div class="title__title">Drop us a line</div>
+								</div>
+								<div class="body-main__form form">
+									<form action="https://jsonplaceholder.typicode.com/posts" class="form__main" method="post"
+										enctype="multipart/form-data">
+
+										<div class="form__line">
+											<label for="name" class="form__label">First Name*</label>
+											<input id="name" name="name" type="text" class="form__input" required
+												autocomplete="off" placeholder="Your first name">
+										</div>
+
+										<div class="form__line">
+											<label for="lastname" class="form__label">Last Name*</label>
+											<input id="lastname" name="lastname" type="text" class="form__input" required
+												autocomplete="off" placeholder="Your last name">
+										</div>
+
+										<div class="form__line">
+											<label for="e-mail" class="form__label">Email*</label>
+											<input id="e-mail" name="e-mail" type="text" class="form__input" required
+												placeholder="Your working email" autocomplete="off">
+										</div>
+
+										<div class="form__line">
+											<label for="phone" class="form__label">Phone</label>
+											<input id="phone" name="phone" type="tel" class="form__input" required
+												placeholder="Your phone number" autocomplete="off">
+										</div>
+
+										<div class="form__line form__line--message">
+											<p class="form__message">Your message</p>
+											<textarea name="message" class="form__area" cols="30" rows="10"
+												placeholder="Your message"></textarea>
+										</div>
+
+
+										<div class="form__line checkbox">
+											<div class="checkbox__line">
+												<input id="agree" name="agree" value="yes" checked type="checkbox"
+													class="checkbox__input" required>
+												<label for="agree" class="checkbox__label">
+													<span class="checkbox__text">
+														I agree to receive communications from Createx Online School
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="form__line checkbox__button">
+											<button class="body-main__button checkbox__button button" type="submit"><span>
+													Send message
+												</span></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+				</section>
+
+				<!-- ==================Section page__form================================ -->
+				<section class="page__form">
+					<p class="page__text">Приклад форми</p>
+					<form class="about-form" method="POST" enctype="multipart/form-data" action="#">
+						<div class="about-form__line">
+							<label class="about-form__label">однорядковий ввід даниих</label>
+							<input class="about-form__input" name="age" value="12" type="text">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про placeholder</label>
+							<input class="about-form__input" name="age" type="text" placeholder="about placeholder">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про autocomplete</label>
+							<input class="about-form__input" autocomplete="off" name="age" type="text"
+								placeholder="about autocomplete">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про required</label>
+							<input class="about-form__input" required tabindex="2" autocomplete="off" name="age" type="text"
+								placeholder="about required">
+						</div>
+
+						<div class="about-form__line">
+							<label class="about-form__label">про tabindex</label>
+							<input class="about-form__input" tabindex="1" autocomplete="off" name="age" type="text"
+								placeholder="about tabindex">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про e-mail</label>
+							<input class="about-form__input" type="email" tabindex="1" autocomplete="off" name="age"
+								placeholder="about e-mail">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про type hidden</label>
+							<input class="about-form__input" type="hidden" name="toker">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про type tel</label>
+							<input class="about-form__input" type="tel" name="toker" placeholder="tel">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">Number</label>
+							<input class="about-form__input" type="number" name="toker" placeholder="number">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">Color</label>
+							<input class="about-form__input" type="color" name="toker">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про type search</label>
+							<input class="about-form__input" type="search" name="search">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про type date</label>
+							<input class="about-form__input" type="date">
+						</div>
+						<div class="about-form__line">
+							<label class="about-form__label">про type range</label>
+							<input class="about-form__input" type="range">
+						</div>
+
+						<!-- Множинний вибір -->
+						<div class="about-form__line">
+							<label class="about-form__label">про type label</label>
+							<input id="car-01" class="about-form__input about-form__input_chk" required name="car"
+								type="checkbox">
+							<label class="about-form__label" for="car-01">Є авто??</label>
+							<input id="car-02" class="about-form__input about-form__input_chk" required name="car"
+								type="checkbox">
+							<label class="about-form__label" for="car-02">Є будинок??</label>
+						</div>
+
+						<div class="about-form__line">
+							<div class="about-form__title">Вибери улюбленця</div>
+							<div class="about-form__radio">
+								<input checked class="about-form__input about-form__input_radio" id="pet-01" required
+									value="cat" name="pet" type="radio">
+								<label class="about-form__label" for="pet-01">Киця</label>
+							</div>
+							<div class="about-form__radio">
+								<input class="about-form__input about-form__input_radio" id="pet-02" required name="pet"
+									value="dog" type="radio">
+								<label class="about-form__label" for="pet-02">Пес</label>
+							</div>
+						</div>
+
+						<div class="about-form__line">
+							<input class="about-form__input" name="file" accept="image/png, image/jpeg" multiple type="file">
+						</div>
+
+						<div class="about-form__line">
+							<textarea class="about-form__area" name="message" placeholder="123" autocomplete="off"></textarea>
+						</div>
+
+						<div class="about-form__line">
+							<button class="about-form__button" type="button">Я кнопка</button>
+							<button class="about-form__button" type="reset">Я кнопка</button>
+							<!-- <button class="about-form__button" type="submit">Я кнопка</button> -->
+						</div>
+
+						<!-- випадаючий список -->
+						<!-- <section>
+						<select multiple name="list" id="">
+							<option value="1">Action 1</option>
+							<option value="2">Action 2</option>
+							<option value="3">Action 3</option>
+							<option value="4">Action 4</option>
+							<option selected value="5">Action 5</option>
+							<option value="6">Action 6</option>
+						</select>
+					</section> -->
+					</form>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:regular,700,900&display=swap");
+
+body {
+	/* Значення за замовченням */
+	font-family: "Lato";
+	color: #424551;
+	/* font-size: 16px; */
+}
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper>main {
+	flex-grow: 1; 
+	/* дозволяю рости контенту main */
+}/* ============================ */
+
+/* обмеж. контейнер */
+[class*="__container"] {
+max-width: 1260px;
+	/* центрую */
+margin: 0 auto;
+	/* ставлю відптупи безпеки */
+padding-left: 15px; 
+padding-right: 15px; 
+}
+
+/*==========================================================*/
+.page{}
+.page__main{} 
+/* ========================================================= */
+
+/* ===========HEADER================= */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 0;
+	z-index: 50;
+}
+
+/* Flex-контейнер */
+.header__container {
+	display: flex;
+	align-items: center;
+	gap: 60px;
+}
+
+.header__logo {}
+
+.header__menu {
+	flex-grow: 1;
+}
+
+.header__actions {}
+
+.menu {}
+
+.menu__list {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 40px;
+	row-gap: 10px;
+}
+
+.menu__item {}
+
+.menu__link {
+	font-weight: 700;
+}
+
+.menu__link:hover {
+	text-decoration: underline;
+}
+
+.actions-header {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	gap: 36px;
+	flex-wrap: wrap;
+}
+
+.actions-header__button {}
+
+.actions-header__auth {
+	background: url('../img/icons/user.svg') left no-repeat;
+	padding-left: 24px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.actions-header__auth:hover span {
+	text-decoration: underline;
+}
+/* ========================================== */
+/* ===========SECTION============= */
+ .main-block {
+	/*відступи від початку сайту до контенту в блоці,найв.об`єкту*/
+	padding: 150px 0px 180px 0px;
+	/*відступи від останнього ел в блоці до наступного блоку*/
+}
+
+.main-block__container {
+	position: relative;
+}
+
+.body-main {
+	display: flex;
+	/* ставлю дві колонки по центру попречної вісі */
+   align-items: center;  
+}
+
+.body-main__media {
+	flex: 0 1 35.3%;
+}
+
+
+.body-main__media img{
+	max-width: 100%;
+	transform: translate(-10px, 0px);
+}
+
+.body-main__content {
+	/* !!! тут по макету 105px я не можу поставити цей вівступ, тоді ломається конструкція flex .form__label display: inline-flex; */
+	padding-left:5.5%;
+	/* відстань між флекс-елементами 105px/1230*100;*/
+	flex: 0 1 64.7%;
+	/* flex-елементи стоять на початку вздовж поперечної осі*/
+	align-self: flex-start;
+}
+
+.body-main__title{
+	color: #1E212C;
+	margin-bottom: 40px;
+}
+
+.title__subtitle {
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	line-height:1.5;
+}
+
+.title__title {
+	font-size: 46px;
+	font-weight: 900;
+	line-height: 1.3;
+} 
+
+.body-main__form {
+	display:inline-flex;
+}
+
+.form:not(:last-child) {
+	margin-bottom: 48px;
+}
+
+.form__main{
+	display: flex;
+	flex-wrap: wrap;
+	/* відстань між колонками */
+	column-gap: 25px;
+	row-gap: 24px;
+}
+
+.form__line {
+	display: flex;
+	flex: 0 1 340px;
+	flex-direction: column; 
+	gap: 8px;
+}
+
+.form__label {
+	display: inline-flex;
+	color: #424551;
+	line-height: 160%;
+}
+
+.form__input {
+	height: 52px;
+}
+
+.form__input::placeholder {
+	color: #9A9CA5;
+}
+
+.form__line--message {
+	flex: 0 1 705px;
+}
+
+.form__input,
+.form__area {
+	background: #FFFFFF;
+	border: 1px solid #D7DADD;
+	border-radius: 4px;
+	padding: 13px 0px 13px 16px;
+	line-height: 160%;
+}
+
+.form__area {
+	resize: none;
+	height: 128px;
+	width: 100%;
+	color: #9A9CA5;
+}
+
+/*кастомний чекбох*/
+.checkbox {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+.checkbox__line {
+	position: relative;
+	flex: 0 1 50%;
+	display: flex;
+}
+.checkbox__button {
+	flex: 0 1 50%;
+}
+.checkbox__input {
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+
+}
+
+/* відслідковую стан вибраний чекбокс чи ні */
+.checkbox__input:focus +.checkbox__label::before {
+	/*інпут ми сховали і ми звертаємося до наступного обєкту - лейбл, до його біфора*/
+	outline: 1px solid #FF3F3A;
+}
+
+.checkbox__input:checked +.checkbox__label::before {
+	outline: none;
+	background: #FF3F3A url('../img/check.svg') center / 70% no-repeat;
+}
+
+.checkbox__label {
+	display: inline-flex;
+	cursor: pointer;
+	align-items: center;
+	gap: 12px;
+}
+
+/* малюю свій квідратик */
+.checkbox__label::before {
+	margin-top: -25px;
+	content: "";
+	flex: 0 0 16px;
+	width: 16px;
+	height: 16px;
+	border-radius: 5px;
+	border: 1px solid #FF3F3A;
+}
+
+.checkbox__text {
+	line-height: 1.5;
+} 
+
+/*================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page__form{
+	padding: 20px 15px 15px 15px;
+	background-color: #caf1b6;
+	box-shadow: 5px 5px 10px rgb(64, 67, 62);
+}
+
+.about-form__line{
+	flex:  0 1 auto;
+	flex-wrap: wrap;
+	flex-direction:row;
+}
+
+.page__text{
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing:2px;
+	text-align: center;
+	margin-bottom: 15px;
+	color: rgb(255, 255, 255);
+}
+
+.about-form__label{
+	font-weight: 400;
+	font-size: 12px;
+	color: #575960;
+	margin-bottom: 20px;
+}
+
+.form {
+margin-bottom: 10px; 
+}
+
+.about-form__line {}
+.about-form__line:not(:last-child){
+	margin-bottom: 25px;
+}
+
+.about-form__input {
+	margin-top: 10px;
+	padding: 0px 10px;
+	height: 45px;
+	color: #2589a4;
+	width: 100%;
+}
+
+.about-form__input::placeholder {
+	color: #f9410e;
+}
+
+.about-form__input:focus{
+	color: #f9410e;
+	text-decoration: underline;
+	outline: 2px dashed #f9410e; 
+}
+
+.about-form__input_radio,
+.about-form__input_chk{
+	width: auto;
+	vertical-align:middle;
+}
+
+.about-form__label{
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.about-form__area{
+	width: 100%;
+	padding: 15px;
+	height: 180px;
+	resize: vertical;
+}
+.about-form__button{
+	background-color: #e0ea50;
+	border-radius: 30px;
+	box-shadow: 0 7px 0px rgba(0, 0, 0, 0.8);
+	padding: 15px;
+	transition: all 0.3s ease 0s;
+}
+.about-form__button:hover{
+	transform: translate(0px,3px);
+	box-shadow: 0 5px 0px rgba(0, 0, 0, 0.447);
+	background-color: #637a57;
+}
+
+
+
+
+.form-block{
+	margin-bottom: 15px;
+}
+
+.form-block__input {	
+height: 55px;
+}
+
+.form-block__input:focus {
+	outline: 4px solid #f9410e;
+} 
